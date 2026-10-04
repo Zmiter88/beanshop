@@ -20,7 +20,7 @@ test.describe('Katalog', () => {
   test('niezalogowany klient po dodaniu produktu trafia na stronę logowania', async ({ api, page, catalog, loginPage }) => {
     await catalog.goto();
     await catalog.addToCart('Etiopia Yirgacheffe');
-    await expect(page).toHaveURL(/\/login\?next=%2F$/);
+    await expect(page).toHaveURL(/\/login\?next=\/$/);
     await expect(loginPage.email).toBeVisible();
   });
 });
